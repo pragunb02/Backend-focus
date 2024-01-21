@@ -1,6 +1,7 @@
 // require('dotenv').config({path:'./env'})
 import dotenv from "dotenv"
 import connectDB from "./db/index.js";
+// import {DB_NAME} from "../constants.js";
 
 dotenv.config({
     path:'./env'
@@ -8,9 +9,6 @@ dotenv.config({
 
 
 connectDB();
-
-
-
 
 // 1st approach
 /*
@@ -26,7 +24,7 @@ const app=express();
 ;(async ()=>{
     try{
         await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`); // db connect
-        app.on("error",(error)=>{   // listeners erro on express app
+        app.on("error",(error)=>{   // listeners erro on express app  // express not mighht connect but mongo os connected
             console.log("ERR:",error);
             throw error;
         })
