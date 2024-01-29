@@ -19,7 +19,7 @@ const videoSchema = new Schema(
             type: String, 
             required: true
         },
-        duration: {
+        duration: {  // clodiary provide
             type: Number, 
             required: true
         },
