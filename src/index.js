@@ -15,17 +15,17 @@ dotenv.config({
 // connectDB();
 connectDB()
   .then(() => {
-    console.log("ighar");
+    // console.log("ighar");
     app.on("error",(error)=>{   // listeners erro on express app  // express not mighht connect but mongo os connected
         console.log("ERR:",error);
         throw error;
     })
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(process.env.PORT || 8000, () => {
       console.log(`Server is running at port ${process.env.PORT}`);
     });
   })
   .catch((error) => {
-    console.log("igharw");
+    // console.log("igharw");
     console.error("MongoDB Connection Error hai!!!", error);
   });
 
