@@ -1,25 +1,26 @@
 // require('dotenv').config({path:'./env'})
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import connectDB from "./db/index.js";
 // import {DB_NAME} from "../constants.js";
 // import express from "express";
 
 // const app=express();
-import {app} from './app.js'
+import { app } from "./app.js";
 
 dotenv.config({
-    path:'./.env'
-})
+  path: "./.env",
+});
 
 // asysnc return promises then catch
 // connectDB();
 connectDB()
   .then(() => {
     // console.log("ighar");
-    app.on("error",(error)=>{   // listeners erro on express app  // express not mighht connect but mongo os connected
-        console.log("ERR:",error);
-        throw error;
-    })
+    app.on("error", (error) => {
+      // listeners erro on express app  // express not mighht connect but mongo os connected
+      console.log("ERR:", error);
+      throw error;
+    });
     app.listen(process.env.PORT || 8000, () => {
       console.log(`Server is running at port ${process.env.PORT}`);
     });
@@ -28,9 +29,6 @@ connectDB()
     // console.log("igharw");
     console.error("MongoDB Connection Error hai!!!", error);
   });
-
-
-
 
 // 1st approach
 /*
