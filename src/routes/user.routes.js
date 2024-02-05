@@ -4,6 +4,10 @@ import {
   loginUser,
   logoutUser,
   refreshAccessToken,
+  changeCurrentPassword,
+  getCurrentUser,
+  updateUserAvatar,
+  updateUserCoverImage,
 } from "../controllers/user.controllers.js";
 
 import { upload } from "../middlewares/multer.middleware.js";
