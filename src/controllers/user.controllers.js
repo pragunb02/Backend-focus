@@ -141,6 +141,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 // aysnchandler ??
 const loginUser = asyncHandler(async (req, res) => {
+  // bub
   // req body --> data
   //  username or email based access
   //find the user
